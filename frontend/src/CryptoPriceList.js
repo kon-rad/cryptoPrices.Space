@@ -32,7 +32,7 @@ class CryptoPricesList extends Component {
                 </tr>
                 </thead>
                 <tbody>
-                {this.state.prices.map((p, i)  =>
+                {this.state.prices && this.state.prices.map((p, i)  =>
                         <tr key={i}>
                             <td>{p.base}</td>
                             <td>{p.currency}</td>

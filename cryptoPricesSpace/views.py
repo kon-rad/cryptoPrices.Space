@@ -34,6 +34,7 @@ def prices_list(request):
     price = []
     for coin in COIN_EXCHANGES:
         price.append(client.get_spot_price(currency_pair = coin))
-        
+    print('price: -> ')
+    print(price)
     if request.method == 'GET':
         return Response({'data': price})
