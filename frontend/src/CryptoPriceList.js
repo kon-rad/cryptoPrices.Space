@@ -15,7 +15,6 @@ class CryptoPricesList extends Component {
     componentDidMount() {
         var  self  =  this;
         cryptoPrices.getPrices().then(function (result) {
-            console.log(result);
             self.setState({ prices:  result.data })
         });
     }

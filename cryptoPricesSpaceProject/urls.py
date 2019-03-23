@@ -19,7 +19,7 @@ from cryptoPricesSpace import views
 from django.conf.urls import url
 
 urlpatterns = [
-    path('', include('cryptoPricesSpace.urls')),
     url(r'^api/prices/$', views.prices_list),
+    path('', include('cryptoPricesSpace.urls')),
     path('admin/', admin.site.urls),
 ]

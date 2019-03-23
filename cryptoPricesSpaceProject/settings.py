@@ -130,3 +130,11 @@ CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
        'localhost:3000',
 )
+
+STATICFILES_DIRS = (
+    os.path.join(os.path.join(BASE_DIR, 'frontend'), 'build', 'static'),
+)
+
+# REACT_APP = 'https://localhost:3000'
+REACT_APP = os.path.join(BASE_DIR, 'frontend')
+
