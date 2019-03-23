@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import CryptoPrices from './CryptoPrices';
 
 const cryptoPrices = new CryptoPrices();
@@ -24,26 +23,24 @@ class CryptoPricesList extends Component {
     render() {
 
         return (
-            <div  className="price--list">
+            <div  className="price__list">
                 <table  className="table">
                 <thead  key="thead">
                 <tr>
-                    <th>#</th>
-                    <th>Coin</th>
+                    <th>Name</th>
+                    <th>Currency</th>
                     <th>Price</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
-                {this.state.prices.map( p  =>
-                    <tr>
-                    <td>{p}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>)}
+                {this.state.prices.map((p, i)  =>
+                        <tr key={i}>
+                            <td>{p.base}</td>
+                            <td>{p.currency}</td>
+                            <td>$ {String(parseFloat(p.amount).toFixed(2)).replace(/\d{1,3}(?=(\d{3})+(?!\d))/g, '$&,')}</td>
+                        </tr>
+                    )
+                }
                 </tbody>
                 </table>
             </div>

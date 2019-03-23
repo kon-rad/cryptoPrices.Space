@@ -1,3 +1,6 @@
 @import  'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';
 
-
+.price__list {
+    max-width: 500px;
+    margin: 0 auto;
+}
