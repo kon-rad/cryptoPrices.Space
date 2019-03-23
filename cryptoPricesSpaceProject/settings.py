@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+COINBASE_KEY = os.environ.get('COINBASE_KEY')
+COINBASE_SECRET = os.environ.get('COINBASE_SECRET')
 
 # Application definition
 
