@@ -1,5 +1,10 @@
 import axios from 'axios';
-const API_URL = 'http://localhost:8085';
+let API_URL = '';
+if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+    API_URL = 'http://localhost:8085';
+} else {
+    API_URL = 'cryptoprices.space';
+}
 
 export default class CryptoPrices{
 
