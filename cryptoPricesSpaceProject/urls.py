@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from cryptoPricesSpace import views
+from django.conf.urls import url
 
 urlpatterns = [
     path('', include('cryptoPricesSpace.urls')),
+    url(r'^api/prices/$', views.prices_list),
     path('admin/', admin.site.urls),
 ]
