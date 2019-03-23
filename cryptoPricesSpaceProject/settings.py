@@ -25,7 +25,9 @@ SECRET_KEY = '79t&3b!l_h6vus68z5i$ve8v%w15@-q5@&9ejy8jwgpfaqln&='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'cryptoprices.space'
+]
 
 COINBASE_KEY = os.environ.get('COINBASE_KEY')
 COINBASE_SECRET = os.environ.get('COINBASE_SECRET')
