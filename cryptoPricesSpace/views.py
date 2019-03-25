@@ -15,7 +15,6 @@ class ReactAppView(View):
     def get(self, request):
         
         try:
-            
             with open(os.path.join(settings.REACT_APP, 'build', 'index.html')) as file:
                 return HttpResponse(file.read())
 
@@ -34,7 +33,5 @@ def prices_list(request):
     price = []
     for coin in COIN_EXCHANGES:
         price.append(client.get_spot_price(currency_pair = coin))
-    print('price: -> ')
-    print(price)
     if request.method == 'GET':
         return Response({'data': price})

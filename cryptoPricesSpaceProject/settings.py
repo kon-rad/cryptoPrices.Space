@@ -23,10 +23,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '79t&3b!l_h6vus68z5i$ve8v%w15@-q5@&9ejy8jwgpfaqln&='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    'cryptoprices.space'
+    'cryptoprices.space',
+    'localhost'
 ]
 
 COINBASE_KEY = os.environ.get('COINBASE_KEY')
@@ -136,8 +137,7 @@ CORS_ORIGIN_WHITELIST = (
 
 STATICFILES_DIRS = (
     os.path.join(os.path.join(BASE_DIR, 'frontend'), 'build', 'static'),
+    os.path.join(os.path.join(BASE_DIR, 'frontend'), 'build'),
 )
 
-# REACT_APP = 'https://localhost:3000'
 REACT_APP = os.path.join(BASE_DIR, 'frontend')
-
