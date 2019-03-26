@@ -13,7 +13,6 @@ COIN_EXCHANGES = ['BTC-USD', 'ETH-USD', 'LTC-USD', 'XRP-USD', 'ZRX-USD', 'BCH-US
 class ReactAppView(View):
 
     def get(self, request):
-        
         try:
             with open(os.path.join(settings.REACT_APP, 'build', 'index.html')) as file:
                 return HttpResponse(file.read())
@@ -28,7 +27,6 @@ class ReactAppView(View):
 
 @api_view(['GET'])
 def prices_list(request):
-    # list prices
     client = Client(settings.COINBASE_KEY, settings.COINBASE_SECRET)
     price = []
     for coin in COIN_EXCHANGES:
