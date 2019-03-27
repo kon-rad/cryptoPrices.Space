@@ -23,11 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '79t&3b!l_h6vus68z5i$ve8v%w15@-q5@&9ejy8jwgpfaqln&='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'cryptoprices.space',
-    'localhost'
+    'localhost',
+    'http://unix:/home/konrad/cryptoP/cryptop.sock'
 ]
 
 COINBASE_KEY = os.environ.get('COINBASE_KEY')
