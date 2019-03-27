@@ -27,8 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'cryptoprices.space',
-    'localhost',
-    'http://unix:/home/konrad/cryptoP/cryptop.sock'
+    'localhost'
 ]
 
 COINBASE_KEY = os.environ.get('COINBASE_KEY')
