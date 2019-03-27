@@ -8,7 +8,19 @@ from django.conf import settings
 from coinbase.wallet.client import Client
 import os
 
-COIN_EXCHANGES = ['BTC-USD', 'ETH-USD', 'LTC-USD', 'XRP-USD', 'ZRX-USD', 'BCH-USD', 'XLM-USD', 'ETC-USD']
+COIN_EXCHANGES = [
+    'BTC-USD',
+    'ETH-USD',
+    'XRP-USD',
+    'LTC-USD',
+    'BCH-USD',
+    'XLM-USD',
+    'ETC-USD',
+    'ZEC-USD',
+    'BAT-USD',
+    'USDC-USD',
+    'ZRX-USD'
+    ]
 
 class ReactAppView(View):
 
