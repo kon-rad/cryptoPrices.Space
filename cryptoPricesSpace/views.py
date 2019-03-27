@@ -20,7 +20,7 @@ class ReactAppView(View):
         except :
             return HttpResponse(
                 """
-                index.html not found ! build your React app !!
+                This page is currently unavailable. Please try again later.
                 """,
                 status=501,
             )
