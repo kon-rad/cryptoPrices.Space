@@ -7,4 +7,4 @@ node_modules
 /cryptoPricesSpace/migrations/__pycache__
 notes.md
 .vscode
-
+env
