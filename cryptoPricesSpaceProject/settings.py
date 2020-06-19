@@ -26,7 +26,7 @@ SECRET_KEY = '79t&3b!l_h6vus68z5i$ve8v%w15@-q5@&9ejy8jwgpfaqln&='
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'cryptoprices.space',
+    'cryptoprices.gnonous.com',
     'localhost'
 ]
 
