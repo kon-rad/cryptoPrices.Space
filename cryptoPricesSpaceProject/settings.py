@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'cryptoprices.gnonous.com',
-    'localhost'
+    'localhost',
+    '127.0.0.1'
 ]
 
 COINBASE_KEY = os.environ.get('COINBASE_KEY')
