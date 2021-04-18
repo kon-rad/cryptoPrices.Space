@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'cryptoprices.gnonous.com',
     'localhost',
+    'http://localhost:3000',
     '127.0.0.1'
 ]
 

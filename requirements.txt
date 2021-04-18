@@ -1,4 +1,4 @@
-coinbase==2.1.0
+pycoingecko==1.4.1
 django==2.1.7  
 django-cors-headers==2.5.2
 djangorestframework==3.9.2 
