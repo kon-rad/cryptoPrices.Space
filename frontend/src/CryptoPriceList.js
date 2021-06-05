@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import CryptoPrices from './CryptoPrices'
+import Spinner from './components/Spinner'
+import ErrorMessage from './components/ErrorMessage'
 
 const cryptoPrices = new CryptoPrices()
 
@@ -9,21 +11,36 @@ class CryptoPricesList extends Component {
 
         this.state = {
             prices: [],
+            isLoading: true,
+            errors: [],
         }
     }
 
     componentDidMount() {
         var self = this
-        cryptoPrices.getPrices().then(function (result) {
-            const { data } = result
-            if (!data) {
-                return
-            }
-            self.setState({ prices: data })
-        })
+        cryptoPrices
+            .getPrices()
+            .then(function (result) {
+                const { data } = result
+                if (!data) {
+                    this.setState({
+                        isLoading: false,
+                        errors: ['Error: unable to get data'],
+                    })
+                    return
+                }
+                self.setState({ prices: data, isLoading: false })
+            })
+            .catch((e) => {
+                this.setState({
+                    errors: [e.message],
+                    isLoading: false,
+                })
+            })
     }
 
     render() {
+        const { isLoading, prices, errors } = this.state
         return (
             <div className="price__list">
                 <table className="table">
@@ -35,8 +52,8 @@ class CryptoPricesList extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.state.prices &&
-                            this.state.prices.map((p, i) => (
+                        {prices &&
+                            prices.map((p, i) => (
                                 <tr key={i}>
                                     <td>{p.base}</td>
                                     <td>{p.currency}</td>
@@ -53,6 +70,10 @@ class CryptoPricesList extends Component {
                             ))}
                     </tbody>
                 </table>
+                {isLoading ? <Spinner /> : null}
+                {errors.map((e, i) => (
+                    <ErrorMessage key={i} text={e} />
+                ))}
             </div>
         )
     }
