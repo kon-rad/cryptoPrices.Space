@@ -7,6 +7,7 @@ sudo npm install
 sudo npm run build
 
 # start virtual env, update requirements, rebuild app
+cd ../
 virtualenv .
 source bin/activate
 pip install -r requirements.txt
